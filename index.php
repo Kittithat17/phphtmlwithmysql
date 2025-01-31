@@ -22,6 +22,9 @@ function isActiveForm($formName, $activeForm) {
 ?>
 
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,11 +35,12 @@ function isActiveForm($formName, $activeForm) {
 </head>
 <body>
 
-    <divn class="container">
-        <div class="form-box <?= isActiveForm('login',$activeForm);?>" id="login-form">
-            <form action="login.php" method="post">
-                <h2>Login</h2>
-                <?= showError($error['login']);?>
+    <div class="container">
+        <div class="form-box <?= isActiveForm('login', $activeForm); ?>" id="login-form">
+        <form action="loginr.php" method="post">
+                    <h2>Login</h2>
+                    <?= showError($errors['login']);?>
+
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" name="login">Login</button>
@@ -45,10 +49,10 @@ function isActiveForm($formName, $activeForm) {
         </div>
     
     
-        <div class="form-box <?= isActiveForm('register',$activeForm);?>" id="register-form">
-            <form action="login.php" method="post">
+        <div class="form-box <?= isActiveForm('register', $activeForm); ?>" id="register-form">
+        <form action="loginr.php" method="post">
                 <h2>Register</h2>
-                <?= showError($error['register']);?>
+                <?= showError($errors['register']);?>
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Password" required>
@@ -62,7 +66,7 @@ function isActiveForm($formName, $activeForm) {
                 <p>Already have an account? <a href="#" onclick="showForm('login-form')">Login</a></p>
             </form>
         </div>
-    </divn>
+    </div>
 
     <script src="script.js"></script>
 </body>
